@@ -9,9 +9,9 @@ package
 	import flash.system.Security;
 	import flash.text.TextField;
 	import com.mallets.assets.MlAssets;
+	import com.mallets.ui.MlListBox;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import com.mallets.ui.MlListBox;
 	
 	/**
 	 * Mallets main class
@@ -28,9 +28,7 @@ package
 		}
 		
 		public function init(evt:Event):void {
-			var list:MlListBox = new MlListBox();
-			list.addItems(['a', 'b', 'c','a', 'b', 'c','a', 'b', 'c']);
-			addChild(list);
+			
 		}
 	}
 	
