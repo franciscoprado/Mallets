@@ -22,7 +22,7 @@ package
 		
 		public function Main():void 
 		{
-			MlAssets.init("xml/assets.xml");
+			MlAssets.init();
 			MlAssets.container = this;
 			this.addEventListener("ASSETS_COMPLETE", init);
 		}

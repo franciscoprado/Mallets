@@ -24,14 +24,13 @@ package com.mallets.assets
 		
 		/**
 		 * Start the assets download
-		 * @param	xml_source The path of XML file who has the assets information
 		 */
-		public static function init(xml_source:String):void
+		public static function init():void
 		{
 			var main_xml_loader:URLLoader = new URLLoader();
 			main_xml_loader.addEventListener(Event.COMPLETE, startLoadAssets);
 			main_xml_loader.addEventListener(IOErrorEvent.IO_ERROR, errorHandler);
-			main_xml_loader.load(new URLRequest(xml_source));
+			main_xml_loader.load(new URLRequest("xml/assets.xml"));
 		}
 		
 		/**

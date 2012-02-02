@@ -1,6 +1,5 @@
 package com.mallets.assets 
 {
-	import com.greensock.loading.display.ContentDisplay;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.MovieClip;
