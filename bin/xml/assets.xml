@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<languages>
+		<asset id="pt_br" type="language" src="xml/pt_br.xml" />
+		<asset id="de" type="language" src="xml/de.xml" />
+	</languages>
+	
+	<components>
+		<!--THIS IS THE STANDARD ASSETS FROM MALLETS LIB - REPLACE OR REMOVE AS YOU WISH.-->
+		<asset id="button" src="bmp/button.png" />
+		<asset id="button_over" src="bmp/button_over.png" />
+		<asset id="button_down" src="bmp/button_down.png" />	
+		<asset id="scrollbar" src="bmp/scrollbar.png" />
+		<asset id="pane" src="bmp/pane.png" />
+		<asset id="checkbox" src="bmp/checkbox.png" />
+		<asset id="check" src="bmp/check.png" />
+		<asset id="listbox" src="bmp/listbox.png" />
+		<asset id="listbutton" src="bmp/listbutton.png" />
+		<!--END-->
+	</components>
+	
+	<assets>
+		<asset id="track" src="mp3/Chris Issak - Wicked Game.mp3" />
+		<asset id="image" src="bmp/DSC-0000058.jpg" />
+		<asset id="sprite" src="bmp/sprite_blitting.gif" />
+		<asset id="map" src="xml/map1.xml" />
+		<asset id="shot" src="mp3/shot.mp3" />
+	</assets>
+</data>

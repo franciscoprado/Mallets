@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<level name="Training">
+		<formation name="" total_shots="1">
+			<player name="tower1_npc" type="tower" x="400" y="200" />			
+		</formation>
+	</level>
+	<level name="Piece of Cake">
+		<formation name="" total_shots="3">
+			<player name="tower1_npc" type="tower" x="340" y="150" />			
+			<player name="tower1_npc" type="tower" x="480" y="150" />			
+			<player name="tower1_npc" type="tower" x="500" y="210" />			
+		</formation>
+	</level>
+	<level name="Little touch">
+		<formation name="" total_shots="2">
+			<player name="" type="tower" x="270" y="150" />
+			<player name="" type="tower" x="570" y="150" />
+			
+			<player name="wall" type="wall" x="200" y="180" />
+			<player name="wall" type="wall" x="230" y="180" />
+			<player name="wall" type="wall" x="280" y="180" />
+			
+			<player name="wall" type="wall" x="500" y="180" />
+			<player name="wall" type="wall" x="530" y="180" />
+			<player name="wall" type="wall" x="580" y="180" />
+		</formation>
+	</level>
+	<level name="Angles">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="600" y="270" />
+			<player name="tower1_npc" type="tower" x="200" y="210" />
+			
+			<player name="obstacle" type="obstacle" x="280" y="240" />
+			<player name="obstacle" type="obstacle" x="280" y="220" />
+			<player name="obstacle" type="obstacle" x="280" y="200" />
+			<player name="obstacle" type="obstacle" x="280" y="180" />
+			
+			<player name="obstacle" type="obstacle" x="500" y="170" />
+			<player name="obstacle" type="obstacle" x="500" y="190" />
+			<player name="obstacle" type="obstacle" x="500" y="210" />
+			<player name="obstacle" type="obstacle" x="500" y="230" />
+		</formation>
+	</level>
+	<level name="Borderline">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="170" y="100" />
+			<player name="tower2_npc" type="tower" x="450" y="100" />
+			<player name="tower3_npc" type="tower" x="450" y="140" />
+			<player name="wall" type="wall" x="400" y="260" />
+		</formation>
+	</level>
+	<level name="Destroying">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="180" y="150" />
+			<player name="obstacle" type="obstacle" x="170" y="180" />
+			<player name="obstacle" type="obstacle" x="190" y="180" />
+			<player name="obstacle" type="obstacle" x="210" y="180" />
+			<player name="obstacle" type="obstacle" x="170" y="200" />
+			<player name="obstacle" type="obstacle" x="190" y="200" />
+			<player name="obstacle" type="obstacle" x="210" y="200" />
+		</formation>
+	</level>
+	<level name="Full area">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="400" y="250" />
+			
+			<player name="obstacle" type="obstacle" x="360" y="210" />
+			<player name="obstacle" type="obstacle" x="380" y="210" />
+			<player name="obstacle" type="obstacle" x="400" y="210" />
+			<player name="obstacle" type="obstacle" x="420" y="210" />
+			<player name="obstacle" type="obstacle" x="440" y="210" />
+			<player name="obstacle" type="obstacle" x="460" y="210" />
+			
+			<player name="obstacle" type="obstacle" x="360" y="190" />
+			<player name="obstacle" type="obstacle" x="380" y="190" />
+			<player name="obstacle" type="obstacle" x="400" y="190" />
+			<player name="obstacle" type="obstacle" x="420" y="190" />
+			<player name="obstacle" type="obstacle" x="440" y="190" />
+			<player name="obstacle" type="obstacle" x="460" y="190" />
+			
+			<player name="obstacle" type="obstacle" x="360" y="170" />
+			<player name="obstacle" type="obstacle" x="380" y="170" />
+			<player name="obstacle" type="obstacle" x="400" y="170" />
+			<player name="obstacle" type="obstacle" x="420" y="170" />
+			<player name="obstacle" type="obstacle" x="440" y="170" />
+			<player name="obstacle" type="obstacle" x="460" y="170" />
+			
+			<player name="obstacle" type="obstacle" x="360" y="150" />
+			<player name="obstacle" type="obstacle" x="380" y="150" />
+			<player name="obstacle" type="obstacle" x="400" y="150" />
+			<player name="obstacle" type="obstacle" x="420" y="150" />
+			<player name="obstacle" type="obstacle" x="440" y="150" />
+			<player name="obstacle" type="obstacle" x="460" y="150" />
+		
+			<player name="wall" type="wall" x="420" y="120" />
+			<player name="wall" type="wall" x="300" y="200" />
+			<player name="wall" type="wall" x="320" y="150" />
+			<player name="wall" type="wall" x="500" y="230" />
+			<player name="wall" type="wall" x="500" y="200" />
+			<player name="wall" type="wall" x="500" y="170" />
+			<player name="wall" type="wall" x="500" y="140" />
+		</formation>
+	</level>
+	<level name="Two times">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="250" y="200" />
+			<player name="obstacle" type="obstacle" x="230" y="230" />
+			<player name="obstacle" type="obstacle" x="270" y="230" />
+			<player name="obstacle" type="obstacle" x="230" y="260" />
+			<player name="obstacle" type="obstacle" x="270" y="260" />
+			
+			<player name="wall" type="wall" x="300" y="70" />
+			<player name="wall" type="wall" x="300" y="150" />
+			<player name="wall" type="wall" x="300" y="180" />
+			<player name="wall" type="wall" x="300" y="210" />
+			<player name="wall" type="wall" x="300" y="240" />
+			<player name="wall" type="wall" x="300" y="270" />
+		</formation>
+	</level>
+	<level name="Cascade">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="550" y="150" />
+			<player name="obstacle" type="obstacle" x="510" y="180" />
+			<player name="obstacle" type="obstacle" x="510" y="160" />
+			<player name="obstacle" type="obstacle" x="510" y="140" />
+			<player name="obstacle" type="obstacle" x="510" y="120" />
+			
+			
+			<player name="obstacle" type="obstacle" x="480" y="80" />
+			<player name="obstacle" type="obstacle" x="460" y="80" />
+			<player name="obstacle" type="obstacle" x="440" y="80" />
+			<player name="obstacle" type="obstacle" x="420" y="80" />
+			<player name="obstacle" type="obstacle" x="400" y="80" />
+			<player name="obstacle" type="obstacle" x="380" y="80" />
+			<player name="" type="wall" x="350" y="80" />
+			
+			<player name="" type="wall" x="480" y="180" />
+			<player name="" type="wall" x="480" y="120" />
+			<player name="" type="wall" x="380" y="120" />
+			
+		</formation>
+	</level>
+	<level name="The 'M'">
+		<formation name="" total_shots="5">
+			<player name="npc" type="tower" x="300" y="250" />
+			<player name="npc" type="tower" x="350" y="200" />
+			<player name="npc" type="tower" x="400" y="250" />
+			<player name="npc" type="tower" x="450" y="200" />
+			<player name="npc" type="tower" x="500" y="250" />
+		</formation>
+	</level>
+	<level name="Blocks">
+		<formation name="" total_shots="2">
+			<player name="npc" type="tower" x="370" y="270" />
+			<player name="npc" type="tower" x="430" y="270" />
+			
+			<player name="wall" type="wall" x="400" y="110" />
+			
+			<player name="obstacle" type="obstacle" x="350" y="80" />
+			<player name="obstacle" type="obstacle" x="370" y="80" />
+			<player name="obstacle" type="obstacle" x="390" y="80" />
+			<player name="obstacle" type="obstacle" x="410" y="80" />
+			<player name="obstacle" type="obstacle" x="430" y="80" />
+			<player name="obstacle" type="obstacle" x="450" y="80" />
+			
+			<player name="obstacle" type="obstacle" x="350" y="160" />
+			<player name="obstacle" type="obstacle" x="370" y="160" />
+			<player name="obstacle" type="obstacle" x="390" y="160" />
+			<player name="obstacle" type="obstacle" x="410" y="160" />
+			<player name="obstacle" type="obstacle" x="430" y="160" />
+			<player name="obstacle" type="obstacle" x="450" y="160" />
+			
+			<player name="obstacle" type="obstacle" x="350" y="100" />
+			<player name="obstacle" type="obstacle" x="350" y="120" />
+			<player name="obstacle" type="obstacle" x="350" y="140" />
+			
+			<player name="obstacle" type="obstacle" x="450" y="100" />
+			<player name="obstacle" type="obstacle" x="450" y="120" />
+			<player name="obstacle" type="obstacle" x="450" y="140" />
+		</formation>
+	</level>
+	<level name="Walled">
+		<formation name="" total_shots="4">
+			<player name="npc" type="tower" x="300" y="220" />
+			<player name="npc" type="tower" x="550" y="190" />
+			
+			<player name="wall" type="wall" x="200" y="150" />
+			<player name="wall" type="wall" x="200" y="120" />
+			<player name="wall" type="wall" x="200" y="90" />
+			<player name="wall" type="wall" x="230" y="220" />
+			<player name="wall" type="wall" x="200" y="250" />
+			<player name="wall" type="wall" x="240" y="150" />
+			<player name="wall" type="wall" x="250" y="250" />
+			<player name="wall" type="wall" x="280" y="250" />
+			<player name="wall" type="wall" x="310" y="250" />
+			
+			<player name="wall" type="wall" x="340" y="250" />
+			<player name="wall" type="wall" x="370" y="250" />
+			<player name="wall" type="wall" x="400" y="250" />
+			<player name="wall" type="wall" x="430" y="250" />
+			<player name="wall" type="wall" x="460" y="250" />
+			
+			<player name="wall" type="wall" x="560" y="220" />
+			<player name="wall" type="wall" x="610" y="220" />
+			<player name="wall" type="wall" x="610" y="250" />
+		</formation>
+	</level>
+	<level name="Widespread Problem">
+		<formation name="" total_shots="4">
+			<player name="npc" type="tower" x="250" y="100" />
+			<player name="npc" type="tower" x="550" y="100" />
+			<player name="npc" type="tower" x="370" y="220" />
+			<player name="npc" type="tower" x="430" y="220" />
+			
+			<player name="wall" type="wall" x="220" y="140" />
+			<player name="wall" type="wall" x="250" y="140" />
+			<player name="wall" type="wall" x="280" y="140" />
+			
+			<player name="wall" type="wall" x="520" y="140" />
+			<player name="wall" type="wall" x="550" y="140" />
+			<player name="wall" type="wall" x="580" y="140" />
+			
+			<player name="wall" type="wall" x="250" y="260" />
+			<player name="wall" type="wall" x="550" y="260" />
+			
+			<player name="obstacle" type="obstacle" x="400" y="80" />
+			<player name="obstacle" type="obstacle" x="400" y="100" />
+			<player name="obstacle" type="obstacle" x="400" y="120" />
+			<player name="obstacle" type="obstacle" x="400" y="140" />
+		</formation>
+	</level>
+	<level name="Pinball">
+		<formation name="" total_shots="3">
+			<player name="npc" type="tower" x="350" y="180" />
+			<player name="npc" type="tower" x="270" y="140" />
+			
+			<player name="obstacle" type="obstacle" x="300" y="70" />
+			<player name="obstacle" type="obstacle" x="280" y="70" />
+			<player name="obstacle" type="obstacle" x="300" y="90" />
+			<player name="obstacle" type="obstacle" x="280" y="90" />
+			
+			<player name="obstacle" type="obstacle" x="370" y="220" />
+			
+			<player name="obstacle" type="obstacle" x="250" y="180" />
+			
+			<player name="obstacle" type="obstacle" x="340" y="220" />
+			<player name="obstacle" type="obstacle" x="320" y="220" />
+			<player name="obstacle" type="obstacle" x="300" y="220" />
+			
+			<player name="wall" type="wall" x="250" y="250" />
+			<player name="wall" type="wall" x="280" y="270" />
+			<player name="wall" type="wall" x="310" y="270" />
+			<player name="wall" type="wall" x="340" y="270" />
+			<player name="wall" type="wall" x="370" y="270" />
+			<player name="wall" type="wall" x="430" y="240" />
+			
+			<player name="wall" type="wall" x="290" y="180" />
+			<player name="wall" type="wall" x="230" y="150" />
+		</formation>
+	</level>
+	<level name="Detonator">
+		<formation name="" total_shots="2">
+			<player name="tower1_npc" type="tower" x="180" y="150" />
+			<player name="obstacle" type="obstacle" x="170" y="180" />
+			<player name="obstacle" type="obstacle" x="190" y="180" />
+			<player name="obstacle" type="obstacle" x="210" y="180" />
+			<player name="obstacle" type="obstacle" x="170" y="200" />
+			<player name="obstacle" type="obstacle" x="190" y="200" />
+			<player name="obstacle" type="obstacle" x="210" y="200" />
+			
+			<player name="tower1_npc" type="tower" x="500" y="100" />
+			<player name="wall" type="wall" x="500" y="250" />
+			<player name="wall" type="wall" x="530" y="250" />
+			<player name="wall" type="wall" x="560" y="250" />
+			<player name="wall" type="wall" x="590" y="250" />
+			<player name="obstacle" type="obstacle" x="440" y="200" />
+			<player name="obstacle" type="obstacle" x="460" y="200" />
+			<player name="obstacle" type="obstacle" x="480" y="200" />
+		</formation>
+	</level>
+	<level name="Parallel lines">
+		<formation name="" total_shots="6">
+			<player name="npc" type="tower" x="350" y="200" />
+			<player name="npc" type="tower" x="400" y="200" />
+			<player name="npc" type="tower" x="450" y="200" />
+			<player name="npc" type="tower" x="350" y="70" />
+			<player name="npc" type="tower" x="400" y="70" />
+			<player name="npc" type="tower" x="450" y="70" />
+		</formation>
+	</level>
+	<level name="The Igloo">
+		<formation name="" total_shots="5">
+			<player name="npc" type="tower" x="600" y="290" />
+			<player name="npc" type="tower" x="300" y="220" />
+			<player name="npc" type="tower" x="360" y="190" />
+			
+			<player name="wall" type="wall" x="360" y="80" />
+			<player name="wall" type="wall" x="400" y="80" />
+			<player name="wall" type="wall" x="440" y="80" />
+			
+			<player name="wall" type="wall" x="365" y="160" />
+			<player name="wall" type="wall" x="435" y="160" />
+			
+			<player name="wall" type="wall" x="330" y="80" />
+			<player name="wall" type="wall" x="330" y="110" />
+			<player name="wall" type="wall" x="330" y="140" />
+			
+			<player name="wall" type="wall" x="470" y="80" />
+			<player name="wall" type="wall" x="470" y="110" />
+			<player name="wall" type="wall" x="470" y="140" />
+		</formation>
+	</level>
+	<level name="leaning tower">
+		<formation name="" total_shots="5">
+			<player name="npc" type="tower" x="620" y="70" />
+			<player name="npc" type="tower" x="170" y="70" />
+			<player name="npc" type="tower" x="240" y="80" />
+			
+			<player name="obstacle" type="obstacle" x="260" y="70" />
+			<player name="obstacle" type="obstacle" x="260" y="90" />
+			<player name="obstacle" type="obstacle" x="260" y="110" />
+			
+			<player name="obstacle" type="obstacle" x="550" y="70" />
+			<player name="obstacle" type="obstacle" x="550" y="90" />
+			<player name="obstacle" type="obstacle" x="550" y="110" />
+			<player name="obstacle" type="obstacle" x="550" y="130" />
+			
+			<player name="obstacle" type="obstacle" x="530" y="80" />
+			<player name="obstacle" type="obstacle" x="530" y="100" />
+			<player name="obstacle" type="obstacle" x="530" y="120" />
+			<player name="obstacle" type="obstacle" x="530" y="140" />
+			
+			<player name="obstacle" type="obstacle" x="510" y="90" />
+			<player name="obstacle" type="obstacle" x="510" y="110" />
+			<player name="obstacle" type="obstacle" x="510" y="130" />
+			<player name="obstacle" type="obstacle" x="510" y="150" />
+			
+			<player name="obstacle" type="obstacle" x="360" y="150" />
+			<player name="obstacle" type="obstacle" x="380" y="150" />
+			<player name="obstacle" type="obstacle" x="400" y="150" />			
+		</formation>
+	</level>
+	<level name="Billard">
+		<formation name="" total_shots="8">
+			<player name="npc" type="tower" x="230" y="100" />
+			<player name="npc" type="tower" x="280" y="120" />
+			<player name="npc" type="tower" x="310" y="200" />
+			<player name="npc" type="tower" x="500" y="240" />
+			<player name="npc" type="tower" x="530" y="140" />
+			
+			<player name="wall" type="wall" x="380" y="60" />
+			<player name="wall" type="wall" x="420" y="60" />
+			
+			<player name="wall" type="wall" x="330" y="80" />
+			<player name="wall" type="wall" x="330" y="110" />
+			<player name="wall" type="wall" x="330" y="140" />
+			
+			<player name="wall" type="wall" x="470" y="80" />
+			<player name="wall" type="wall" x="470" y="110" />
+			<player name="wall" type="wall" x="470" y="140" />
+		</formation>
+	</level>
+	<level name="Pushing along Walls">
+		<formation name="" total_shots="3">
+			<player name="npc" type="tower" x="285" y="250" />
+			<player name="npc" type="tower" x="485" y="165" />
+			
+			<player name="wall" type="wall" x="250" y="190" />
+			<player name="wall" type="wall" x="320" y="190" />
+			<player name="wall" type="wall" x="250" y="220" />
+			<player name="wall" type="wall" x="320" y="220" />
+			<player name="wall" type="wall" x="250" y="250" />
+			<player name="wall" type="wall" x="320" y="250" />
+			<player name="wall" type="wall" x="250" y="280" />
+			<player name="wall" type="wall" x="320" y="280" />
+			
+			<player name="wall" type="wall" x="285" y="100" />
+			<player name="wall" type="wall" x="250" y="140" />
+			
+			<!--lado dir-->
+			<player name="wall" type="wall" x="510" y="100" />
+			<player name="wall" type="wall" x="450" y="150" />
+			<player name="wall" type="wall" x="520" y="150" />
+			<player name="wall" type="wall" x="450" y="180" />
+			<player name="wall" type="wall" x="520" y="180" />
+			<player name="wall" type="wall" x="520" y="210" />
+			<player name="wall" type="wall" x="520" y="240" />
+			<player name="wall" type="wall" x="520" y="270" />
+		</formation>
+	</level>
+</data>
