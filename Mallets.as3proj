@@ -5,17 +5,18 @@
     <movie outputType="Application" />
     <movie input="" />
     <movie path="bin\Mallets.swf" />
-    <movie fps="30" />
-    <movie width="800" />
+    <movie fps="60" />
+    <movie width="700" />
     <movie height="600" />
-    <movie version="10" />
-    <movie minorVersion="1" />
+    <movie version="11" />
+    <movie minorVersion="0" />
     <movie platform="Flash Player" />
     <movie background="#FFFFFF" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
     <class path="src" />
+    <class path="..\movie-monitor" />
   </classpaths>
   <!-- Build options -->
   <build>
@@ -40,7 +41,7 @@
     <option linkReport="" />
     <option loadExterns="" />
     <option staticLinkRSL="True" />
-    <option additional="" />
+    <option additional=" -swf-version=13" />
     <option compilerConstants="" />
     <option minorVersion="" />
   </build>

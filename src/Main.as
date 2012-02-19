@@ -1,5 +1,6 @@
 package 
 {
+	import com.mallets.blitting.MlBlitting;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.events.KeyboardEvent;
@@ -29,6 +30,22 @@ package
 		
 		public function init(evt:Event):void {
 			
+			for (var i:uint = 0; i <= 100; i++)
+			{
+				var blit:MlBlitting = new MlBlitting(MlAssets.asset.sprite, 8, 4);
+				blit.x = Math.random() * (stage.stageWidth - 50);
+				blit.y = Math.random() * (stage.stageHeight - 50);
+				blit.addEventListener(MouseEvent.CLICK, onClick);
+				addChild(blit);
+			}
+			
+			var monitor:MovieMonitor = new MovieMonitor();
+			addChild(monitor);
+		}
+		
+		public function onClick(evt:MouseEvent):void
+		{
+			trace('click');
 		}
 	}
 	

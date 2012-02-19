@@ -16,9 +16,9 @@ package com.mallets.blitting
 	{
 		private var _spritesheet:BitmapData;
 		private var _canvas:BitmapData;
+		private var _bitmap:Bitmap;
 		private var _rect:Rectangle;
 		private var _clear_rect:Rectangle;
-		private var _bitmap:Bitmap;
 		private var _current_tile:Number = 0;
 		private var _tile_width:Number;
 		private var _tile_height:Number;
@@ -54,9 +54,8 @@ package com.mallets.blitting
 			_canvas = new BitmapData(_spritesheet.width, _spritesheet.height, true, 0xFFFFFF);
 			_clear_rect = new Rectangle(0, 0, _spritesheet.width, _spritesheet.height);			
 			_rect = new Rectangle(0, 0, _tile_width, _tile_height);
-			_bitmap = new Bitmap(_canvas);
 			_canvas.copyPixels(_spritesheet, _rect, new Point(0, 0));
-			
+			_bitmap = new Bitmap(_canvas);
 			addChild(_bitmap);
 		}
 		
