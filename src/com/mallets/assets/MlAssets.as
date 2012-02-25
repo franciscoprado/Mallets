@@ -61,6 +61,7 @@ package com.mallets.assets
 		private static function progressHandler(evt:ProgressEvent):void
 		{
 			_progress = _queue.progress;
+			container.dispatchEvent(new ProgressEvent(ProgressEvent.PROGRESS));
 		}
 		
 		private static function completeHandler(evt:Event):void
@@ -82,7 +83,7 @@ package com.mallets.assets
 					_all_assets[id] = asset_data;
 			}
 			
-			container.dispatchEvent(new Event("ASSETS_COMPLETE"));
+			container.dispatchEvent(new Event(Event.COMPLETE));
 		}
 		
 		private static function errorHandler(evt:Event):void

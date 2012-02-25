@@ -47,6 +47,25 @@ package com.mallets.assets
 			}
 		}
 		
+		public function remove(loader:ILoader):void
+		{
+			if (_contains(loader))
+			{
+				var arr:Array = [];
+				
+				for each(var ld:ILoader in _queue)
+				{
+					if (ld != loader)
+					{
+						arr.push(ld);
+					}
+				}
+				
+				_queue = arr;				
+				_total_loaders--;
+			}
+		}
+		
 		private function _onAllComplete(evt:Event):void
 		{
 			

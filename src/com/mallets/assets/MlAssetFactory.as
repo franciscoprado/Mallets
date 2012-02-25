@@ -26,34 +26,37 @@ package com.mallets.assets
 		 */
 		public static function getAsset(extension:String, data:Object):Object
 		{
-			var obj:*;
+			var obj:* = null;
 			
-			if (extension == "jpg" || extension == "png" || extension == "gif") 
+			if (data)
 			{
-				obj = new BitmapData(data.width, data.height, true, 0xFFFFFF);
-				obj.draw(data);
-			}
-			else if (extension == "xml")
-			{
-				obj = new XML(data);
-			}
-			else if (extension == "css")
-			{
-				obj = new StyleSheet();
-				obj.parseCSS(data);
-			}
-			else if (extension == "mp3")
-			{
-				obj = data as Sound;
-			}
-			else if (extension == "txt" || extension == "html" || extension == "svg")
-			{
-				// THE USE OF SVG LIKE A STRING IS TO REUSE A SAME IMAGE INTO MULTIPLE OBJECTS
-				obj = new String(data);
-			}
-			else 
-			{
-				obj = data;
+				if (extension == "jpg" || extension == "png" || extension == "gif") 
+				{
+					obj = new BitmapData(data.width, data.height, true, 0xFFFFFF);
+					obj.draw(data);
+				}
+				else if (extension == "xml")
+				{
+					obj = new XML(data);
+				}
+				else if (extension == "css")
+				{
+					obj = new StyleSheet();
+					obj.parseCSS(data);
+				}
+				else if (extension == "mp3")
+				{
+					obj = data as Sound;
+				}
+				else if (extension == "txt" || extension == "html" || extension == "svg")
+				{
+					// THE USE OF SVG LIKE A STRING IS TO REUSE A SAME IMAGE INTO MULTIPLE OBJECTS
+					obj = new String(data);
+				}
+				else 
+				{
+					obj = data;
+				}
 			}
 			
 			return obj;

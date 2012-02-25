@@ -64,7 +64,9 @@ package com.mallets.assets
 				_bytesTotal = Number(evt.bytesTotal);
 				_loader.close();
 				_init_download = true;
-				_queue.dispatchEvent(new Event("INFO_COMPLETE"));
+				
+				if (_queue)
+					_queue.dispatchEvent(new Event("INFO_COMPLETE"));
 			}
 			else
 			{
@@ -82,7 +84,8 @@ package com.mallets.assets
 		
 		private function _onIOError(evt:IOErrorEvent):void
 		{
-			throw new Error("ERROR: the file " + file + " was not found.");
+			trace("ERROR: the file " + file + " was not found.");
+			_queue.remove(this);
 		}
 		
 		public function get progress():Number

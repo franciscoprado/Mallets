@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'18/02/2012'</value>
+      <value>'25/02/2012'</value>
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
@@ -27,7 +27,7 @@
     <library-path append="true" />
   </compiler>
   <file-specs>
-    <path-element>C:\PROJETOS_AS\mallets\src\Main.as</path-element>
+    <path-element>C:\PROJETOS_AS\mallets\src\examples\AssetsPreloader.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>60</default-frame-rate>

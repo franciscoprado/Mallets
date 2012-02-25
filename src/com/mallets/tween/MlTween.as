@@ -14,6 +14,7 @@ package com.mallets.tween
 		
 		public static function to(target:Object, duration:Number, vars:Object):void
 		{
+			target.x = vars.x;
 			target.y = vars.y;
 		}
 		

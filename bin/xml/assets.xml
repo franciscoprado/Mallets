@@ -20,10 +20,10 @@
 	</components>
 	
 	<assets>
-		<asset id="track" src="mp3/Chris Issak - Wicked Game.mp3" />
-		<asset id="image" src="bmp/DSC-0000058.jpg" />
+		<asset id="track" src="mp3/song.mp3" />
+		<asset id="image_error" src="bmp/DSC-0000058.jpg" />
+		<asset id="beach" src="bmp/image.jpg" />
 		<asset id="sprite" src="bmp/sprite_blitting2.gif" />
 		<asset id="map" src="xml/map1.xml" />
-		<asset id="shot" src="mp3/shot.mp3" />
 	</assets>
 </data>
