@@ -10,7 +10,6 @@ package com.mallets.ui
 	import flash.geom.Rectangle;
 	import flash.utils.Timer;
 	import com.mallets.assets.MlAssets;
-	import com.mallets.tween.MlTween;
 	
 	/**
 	 * ...
@@ -125,13 +124,13 @@ package com.mallets.ui
 			var trajectory:Number = _bar.y - roll;
 			
 			if (trajectory > 0 && trajectory < (_pane_height - _bar_height) ){
-				MlTween.to(_bar, 0.3, { y: trajectory } );
+				_bar.y = trajectory;
 			}
 			else if (trajectory > (_pane_height - _bar_height) ) {
-				MlTween.to(_bar, 0.3, { y: _pane_height - _bar_height } );
+				_bar.y = _pane_height - _bar_height;
 			}
 			else if (trajectory < 0) {
-				MlTween.to(_bar, 0.3, { y: 0 } );
+				_bar.y = 0;
 			}
 		}
 		
@@ -145,7 +144,7 @@ package com.mallets.ui
 				var limit:Number = _pane_height - _content.height;
 				var trajectory:Number = limit * pct;
 				
-				MlTween.to(_content, 0.3, { y : trajectory } );
+				_content.y = trajectory;
 				_bar.visible = true;
 			}
 			else {

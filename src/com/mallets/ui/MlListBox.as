@@ -164,7 +164,6 @@ package com.mallets.ui
 		{
 			_visible = false;
 			_list_items.visible = _visible;
-			trace('lost focus')
 		}
 		
 		private function _onMouseUp(evt:MouseEvent):void
