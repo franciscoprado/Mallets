@@ -45,8 +45,7 @@ package com.mallets.ui
 			_addAllObjectsToStage();
 			_createMask();
 			
-			if (with_border)
-				_setBorder();
+			if (with_border) _setBorder();
 		}
 		
 		private function _setButtons():void
@@ -64,8 +63,10 @@ package com.mallets.ui
 		private function _setBorder():void 
 		{
 			_border = new Sprite();
+			Sprite(_border).graphics.beginFill(0xFFFFFF);
 			Sprite(_border).graphics.lineStyle(1);
-			Sprite(_border).graphics.drawRect(0, 0, _pane_width - _bar_width, _pane_height);
+			Sprite(_border).graphics.drawRect(0, 0, _pane_width - _bar_width, _pane_height);			
+			Sprite(_border).graphics.endFill();			
 		}
 		
 		public function addContent(content:DisplayObject):void {
@@ -87,18 +88,19 @@ package com.mallets.ui
 			_bar_width = _bar.width;
 			_bar_height = _bar.height;
 			_pane.x = _pane_width;
-			_pane.height = _pane_height;			
+			_pane.height = _pane_height;
 			_bar.y = _pane.y = 0;
 		}
 		
 		private function _addAllObjectsToStage():void
 		{
+			if (_border) addChild(_border);
+			
 			addChild(_pane);
 			addChild(_mask);
 			addChild(_bar);
 			
 			if (_content) addChild(_content);
-			if (_border) addChild(_border);
 		}
 		
 		private function _createMask():void

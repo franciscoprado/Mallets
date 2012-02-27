@@ -1,11 +1,11 @@
 package examples 
 {
 	import com.mallets.assets.MlAssets;
-	import com.mallets.ui.MlLabel;
 	import com.mallets.ui.MlListBox;
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.ProgressEvent;
+	import flash.text.TextField;
 	
 	/**
 	 * ...
@@ -17,7 +17,7 @@ package examples
 		 * the resources have not been downloaded yet.
 		 */
 		public var list:MlListBox;
-		public var label:MlLabel;
+		public var value_selected:TextField;
 		
 		public function UIComponents() 
 		{
@@ -28,23 +28,24 @@ package examples
 		
 		public function init(evt:Event):void
 		{
-			label = new MlLabel();
+			value_selected = new TextField();
 			list = new MlListBox();
 			
-			label.text = "Value selected: ";
-			label.y = 50;
 			list.addItems(['Michael', 'John', 'Mary', 'Ted', 'Will', 'James', 'Lisa']);
-			
 			// when the listbox has changed its value.
 			list.addEventListener(Event.CHANGE, onValueChange);
+			list.dispatchEvent(new Event(Event.CHANGE));
 			
+			value_selected.width = 300;
+			value_selected.y = 50;
+			
+			addChild(value_selected);
 			addChild(list);
-			addChild(label);
 		}
 		
 		public function onValueChange(evt:Event):void
 		{
-			label.text = "Value selected: " + list.value;
+			value_selected.text = String("Selected: " + list.value).toUpperCase();
 		}
 		
 	}
