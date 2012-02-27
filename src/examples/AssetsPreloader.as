@@ -14,7 +14,7 @@ package examples
 	public class AssetsPreloader extends Sprite 
 	{
 		
-		public var preloader:TextField = new TextField();
+		public var progress:TextField = new TextField();
 		
 		public function AssetsPreloader():void 
 		{
@@ -25,12 +25,12 @@ package examples
 			this.addEventListener(Event.COMPLETE, init);
 			this.addEventListener(ProgressEvent.PROGRESS, onProgress);
 			
-			preloader.width = preloader.height = 300;
-			addChild(preloader);
+			progress.width = progress.height = 300;
+			addChild(progress);
 		}
 		
 		public function init(evt:Event):void {
-			preloader.text = "ALL DOWNLOADS ARE COMPLETE.";
+			progress.text = "ALL DOWNLOADS ARE COMPLETE.";
 			
 			/* How to get the resource:
 			Getting the asset called beach (id = beach) from MlAssets
@@ -42,7 +42,7 @@ package examples
 		
 		public function onProgress(evt:ProgressEvent):void
 		{
-			preloader.text = "Progress: " + Math.round(MlAssets.progress * 100) + "%";
+			progress.text = "Progress: " + Math.round(MlAssets.progress * 100) + "%";
 		}
 	}
 	

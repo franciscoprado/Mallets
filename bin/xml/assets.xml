@@ -6,7 +6,7 @@
 	</languages>
 	
 	<components>
-		<!--THIS IS THE STANDARD ASSETS FROM MALLETS LIB - REPLACE OR REMOVE AS YOU WISH.-->
+		<!--THIS IS THE STANDARD ASSETS FROM MALLETS LIB - ADD, REPLACE OR REMOVE AS YOU WISH.-->
 		<asset id="button" src="bmp/button.png" />
 		<asset id="button_over" src="bmp/button_over.png" />
 		<asset id="button_down" src="bmp/button_down.png" />	
