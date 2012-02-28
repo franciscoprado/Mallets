@@ -8,7 +8,7 @@ package examples
 	import flash.events.MouseEvent;
 	
 	/**
-	 * ...
+	 * Tutorial teaching how to manipulate sounds.
 	 * @author Francisco Prado
 	 */
 	public class TestSound extends Sprite 
@@ -23,6 +23,8 @@ package examples
 		
 		public function init(evt:Event):void
 		{
+			/* This buttons will control the sound. 
+			Playing, pausing or stopping a song called "track" (see assets.xml file). */
 			var play_button:MlButton = new MlButton("PLAY");
 			var pause_button:MlButton = new MlButton("PAUSE");
 			var stop_button:MlButton = new MlButton("STOP");

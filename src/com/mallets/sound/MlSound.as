@@ -30,7 +30,6 @@ package com.mallets.sound
 		
 		public function play():void
 		{
-			trace(_paused_in);
 			_channel = _sound.play(_paused_in);
 			_is_playing = true;
 			_timer = new Timer(getLength(), 1);
