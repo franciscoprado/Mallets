@@ -15,6 +15,7 @@ package com.mallets.sound
 		private var _channel:SoundChannel;
 		private var _is_playing:Boolean = false;
 		private var _timer:Timer;
+		private var _paused_in:Number = 0;
 		
 		public function MlSound(name:String, sound:Sound) 
 		{
@@ -29,7 +30,8 @@ package com.mallets.sound
 		
 		public function play():void
 		{
-			_channel = _sound.play();
+			trace(_paused_in);
+			_channel = _sound.play(_paused_in);
 			_is_playing = true;
 			_timer = new Timer(getLength(), 1);
 			_timer.addEventListener(TimerEvent.TIMER, _onTick);
@@ -37,8 +39,23 @@ package com.mallets.sound
 		
 		public function stop():void
 		{
+			_paused_in = 0;
 			_channel.stop();
 			_is_playing = false;
+		}
+		
+		public function pause():void
+		{
+			if (_is_playing)
+			{
+				_paused_in = _channel.position;
+				_channel.stop();
+				_is_playing = false;
+			}
+			else
+			{
+				play();
+			}
 		}
 		
 		public function get name():String

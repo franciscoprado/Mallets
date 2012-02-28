@@ -41,6 +41,15 @@ package com.mallets.sound
 			}
 		}
 		
+		public static function pause(sound_name:String):void
+		{
+			if ( _hasThisSound(sound_name) )
+			{
+				var sound:MlSound = getSoundByName(sound_name);
+				sound.pause();
+			}
+		}
+		
 		private static function _hasThisSound(sound_name:String):Boolean
 		{
 			var val:Boolean = false;

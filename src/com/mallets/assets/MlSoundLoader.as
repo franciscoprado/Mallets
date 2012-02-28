@@ -29,11 +29,6 @@ package com.mallets.assets
 		 * @param	id The id of object.
 		 * @param	file_source The path to the file.
 		 */
-		/**
-		 *
-		 * @param	id The id of object.
-		 * @param	file_source The path to the file.
-		 */
 		public function MlSoundLoader(id:String, file_source:String):void
 		{
 			_id = id;

@@ -79,8 +79,8 @@ package com.mallets.assets
 					MlLanguage.addLanguage(id, XML(asset_data));
 				else if (file_extension == "mp3")
 					MlSoundPlayer.addSound(id, Sound(asset_data));
-				else
-					_all_assets[id] = asset_data;
+					
+				_all_assets[id] = asset_data;
 			}
 			
 			container.dispatchEvent(new Event(Event.COMPLETE));
