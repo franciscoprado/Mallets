@@ -38,13 +38,13 @@ package com.mallets.language
 			}
 		}
 		
-		public static function set standardLanguage(language_id:String):void 
+		public static function set defaultLanguage(language_id:String):void 
 		{
 			if (_languages[language_id])
 				_language_id = language_id;
 		}
 		
-		public static function get standardLanguage():String 
+		public static function get defaultLanguage():String 
 		{
 			return _language_id;
 		}
