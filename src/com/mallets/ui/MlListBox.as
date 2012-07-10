@@ -1,4 +1,4 @@
-package com.mallets.ui 
+package com.mallets.ui
 {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -18,7 +18,7 @@ package com.mallets.ui
 	 * ...
 	 * @author Francisco Prado
 	 */
-	public class MlListBox extends Sprite 
+	public class MlListBox extends Sprite
 	{
 		private var _label:MlLabel = new MlLabel();
 		private var _listbox:DisplayObject;
@@ -29,29 +29,35 @@ package com.mallets.ui
 		private var _values:Array = new Array();
 		private var _list_width:Number;
 		private var _list_height:Number;
-		private var _text_format:TextFormat = new TextFormat();
+		private var _text_format:TextFormat;
+		private var _value:String;
 		
-		public function MlListBox(items:Array = null, text_size:Number = 15) 
+		public function MlListBox(values:Array, format:TextFormat = null)
 		{
-			_setButtons();
-			_setLabel(text_size);
-			_setListeners();
+			this._values = values;
+			this.focusRect = false;
 			
-			if (items) 
-				_updateValues(items);
+			if (format)
+				this._text_format = format;
+			
+			if (stage)
+				init();
+			else
+				addEventListener(Event.ADDED_TO_STAGE, init);
 		}
 		
-		public function addItems(values:Array):void
+		private function init(e:Event = null):void
 		{
-			_updateValues(values);
-			_label.text = _values[0];
-			_label.setTextFormat(_text_format);
+			removeEventListener(Event.ADDED_TO_STAGE, init);
+			_setButtons();
 			_createList();
+			_setLabel();
+			_setListeners();
 		}
 		
 		private function _updateValues(arr:Array):void
 		{
-			for each(var value:* in arr)
+			for each (var value:*in arr)
 			{
 				_values.push(value);
 			}
@@ -69,34 +75,37 @@ package com.mallets.ui
 			cacheAsBitmap = true;
 			buttonMode = true;
 			
-			_list_width = _listbox.width;
-			_list_height = _listbox.height;
+			_list_width = listbox_bmp.width;
+			_list_height = listbox_bmp.height;
 			
 			_list_items.y = _list_height;
-			_list_items.visible = _visible;	
+			_list_items.visible = _visible;
 			
 			Sprite(_listbox).mouseChildren = false;
 			Sprite(_listbox).addChild(_label);
-			addChild(_listbox);			
+			addChild(_listbox);
 		}
 		
-		private function _setLabel(text_size:Number):void
+		private function _setLabel():void
 		{
-			_text_format.font = MlFont.getFontName();
-			_text_format.align = TextFormatAlign.LEFT;
-			_text_format.size = text_size;
+			if (!_text_format)
+			{
+				_text_format = new TextFormat();
+				_text_format.font = MlFont.getFontName();
+				_text_format.align = TextFormatAlign.LEFT;
+				_text_format.size = 14;
+			}
 			
 			_label.x = _list_items.x = 20;
-			_label.y = (_listbox.height - Number(_text_format.size)) / 4;			
+			_label.y = (_listbox.height - Number(_text_format.size)) / 4;
 		}
 		
 		private function _setListeners():void
 		{
-			_listbox.addEventListener(MouseEvent.MOUSE_DOWN, _onMouseDown);
-			_listbox.addEventListener(MouseEvent.MOUSE_UP, _onMouseUp);
+			_listbox.addEventListener(MouseEvent.CLICK, _onClick);
 			_listbox.addEventListener(MouseEvent.MOUSE_OVER, _onMouseOver);
 			_listbox.addEventListener(MouseEvent.MOUSE_OUT, _onMouseOut);
-			_list_items.addEventListener(FocusEvent.FOCUS_OUT, _onFocusOut);
+			addEventListener(FocusEvent.FOCUS_OUT, _onFocusOut);
 		}
 		
 		private function _createList():void
@@ -106,35 +115,48 @@ package com.mallets.ui
 			
 			_content = new Sprite();
 			
-			for (var i:uint = 0; i < _values.length; i++ )
+			for (var i:uint = 0; i < _values.length; i++)
 			{
-				var item:MlListItem = new MlListItem(_values[i], _list_width, _list_height);
+				var item:MlListItem = new MlListItem(_values[i].value, _values[i].text, _list_width, _list_height);
 				item.y = i * _list_height;
 				item.addEventListener(MouseEvent.CLICK, _onItemClick);
 				item.addEventListener(MouseEvent.MOUSE_OVER, _onItemOver);
 				item.addEventListener(MouseEvent.MOUSE_OUT, _onItemOut);
 				_content.addChild(item);
+				
+				if (!value && i == 0)
+				{
+					_value = _values[i].value;
+					_label.text = _values[i].text;
+				}
 			}
 			
-			_list_items.addContent(_content);			
+			_label.mouseEnabled = false;
+			_label.setTextFormat(_text_format);
+			
+			addChild(_list_items);
+			_list_items.addContent(_content);
 		}
 		
 		private function _onItemClick(evt:MouseEvent):void
 		{
 			var item:MlListItem = MlListItem(evt.target);
-			_label.text = item.value;
+			_value = item.value;
+			_label.text = item.text;
 			_label.setTextFormat(_text_format);
-			_listbox.dispatchEvent(new MouseEvent(MouseEvent.MOUSE_DOWN));
-			dispatchEvent(new Event(Event.CHANGE));
+			_listbox.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+			stage.focus = this;
 		}
 		
 		private function _onItemOver(evt:MouseEvent):void
 		{
+			removeEventListener(FocusEvent.FOCUS_OUT, _onFocusOut);
 			MlListItem(evt.target).showBorder();
 		}
 		
 		private function _onItemOut(evt:MouseEvent):void
 		{
+			addEventListener(FocusEvent.FOCUS_OUT, _onFocusOut);
 			MlListItem(evt.target).hideBorder();
 		}
 		
@@ -148,15 +170,21 @@ package com.mallets.ui
 			evt.target.alpha = 1;
 		}
 		
-		private function _onMouseDown(evt:MouseEvent):void
+		private function _onClick(evt:MouseEvent):void
 		{
+			stage.focus = this;
 			addChild(_list_items);
 			
 			if (_visible)
+			{
 				_visible = false;
-			else 
+			}
+			else
+			{
 				_visible = true;
-				
+				parent.addChild(this);
+			}
+			
 			_list_items.visible = _visible;
 		}
 		
@@ -166,19 +194,24 @@ package com.mallets.ui
 			_list_items.visible = _visible;
 		}
 		
-		private function _onMouseUp(evt:MouseEvent):void
-		{
-			
-		}
-		
 		public function get value():String
 		{
-			return _label.text;
+			return _value;
+		}
+		
+		public function set value(new_value:String):void
+		{
+			_value = new_value;
 		}
 		
 		public function get selectedLabel():String
 		{
 			return _label.text;
+		}
+		
+		public function set selectedLabel(text:String):void
+		{
+			_label.text = text;
 		}
 	}
 

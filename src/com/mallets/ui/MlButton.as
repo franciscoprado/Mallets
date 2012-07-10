@@ -31,22 +31,28 @@ package com.mallets.ui
 		 * @param	image_over mouse over image, set if you want
 		 * @param	image_down mouse down image, set if you want
 		 */
-		public function MlButton(label:String = "", text_size:Number = 15) 
+		public function MlButton(label:String = "", format:TextFormat = null) 
 		{
+			if (format)
+				_text_format = format;
+			
 			_setButtons();
-			_setLabel(label, text_size);
+			_setLabel(label);
 			_setListeners();
 		}
 		
-		private function _setLabel(label:String, text_size:Number):void
+		private function _setLabel(label:String):void
 		{
-			_text_format.font = MlFont.getFontName();
-			_text_format.align = TextFormatAlign.CENTER;
-			_text_format.size = text_size;
+			if (!_text_format)
+			{
+				_text_format.font = MlFont.getFontName();
+				_text_format.align = TextFormatAlign.CENTER;
+				_text_format.size = 15;
+			}
 			
 			_label.text = label;
 			_label.width = _button.width;
-			_label.y = (_button.height - Number(text_size)) / 4;
+			_label.y = (_button.height - Number(_text_format.size)) / 4;
 			_label.setTextFormat(_text_format);	
 			addChild(_label);
 		}

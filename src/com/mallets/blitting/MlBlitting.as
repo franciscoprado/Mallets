@@ -4,19 +4,19 @@ package com.mallets.blitting
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.geom.Matrix;
 	import flash.geom.Point;
-	import flash.geom.Rectangle;	
+	import flash.geom.Rectangle;
 	import flash.utils.getTimer;
-
+	
 	/**
 	 * ...
 	 * @author Francisco Prado
 	 */
-	public class MlBlitting extends Sprite
+	public class MlBlitting extends Bitmap
 	{
 		private var _spritesheet:BitmapData;
 		private var _canvas:BitmapData;
-		private var _bitmap:Bitmap;
 		private var _rect:Rectangle;
 		private var _clear_rect:Rectangle;
 		private var _current_tile:Number = 0;
@@ -27,6 +27,7 @@ package com.mallets.blitting
 		private var _total_tiles:Number;
 		private var _current_row:uint = 0;
 		private var _action:Object = new Object();
+		private var _allow_render:Boolean = true;
 		
 		/**
 		 * Creates a animated sprite with bitmap data.
@@ -39,10 +40,7 @@ package com.mallets.blitting
 			_spritesheet = sprite_data;
 			_num_cols = num_cols;
 			_num_rows = num_rows;
-			
 			_init();
-			
-			this.addEventListener(Event.ENTER_FRAME, _onEnterFrame);
 		}
 		
 		private function _init():void
@@ -52,27 +50,23 @@ package com.mallets.blitting
 			_total_tiles = _num_rows * _num_cols;
 			
 			_canvas = new BitmapData(_spritesheet.width, _spritesheet.height, true, 0xFFFFFF);
-			_clear_rect = new Rectangle(0, 0, _spritesheet.width, _spritesheet.height);			
+			_clear_rect = new Rectangle(0, 0, _spritesheet.width, _spritesheet.height);
 			_rect = new Rectangle(0, 0, _tile_width, _tile_height);
 			_canvas.copyPixels(_spritesheet, _rect, new Point(0, 0));
-			_bitmap = new Bitmap(_canvas);
-			addChild(_bitmap);
-		}
-		
-		private function _onEnterFrame(evt:Event):void
-		{
-			_canvas.lock();
-			_canvas.fillRect(_clear_rect, 0x000000);
-			_render();
-			_canvas.unlock();
+			
+			this.bitmapData = _canvas;
+			this.smoothing = true;
 		}
 		
 		private function _render():void
 		{
-			_rect.x = (_current_tile % _num_cols) * _tile_width;
-			_rect.y = _current_row * _tile_height;
-			_canvas.copyPixels(_spritesheet, _rect, new Point(0, 0), null, null, true);
-			_current_tile = ++_current_tile % _total_tiles;
+			if (_allow_render)
+			{
+				_rect.x = (_current_tile % _num_cols) * _tile_width;
+				_rect.y = _current_row * _tile_height;
+				_canvas.copyPixels(_spritesheet, _rect, new Point(0, 0), null, null, true);
+				_current_tile = ++_current_tile % _total_tiles;
+			}
 		}
 		
 		/**
@@ -81,8 +75,11 @@ package com.mallets.blitting
 		 */
 		public function changeRow(new_row:uint = 0):void
 		{
-			if (new_row < _num_rows)
+			if (new_row < _num_rows && _current_row != new_row)
+			{
 				_current_row = new_row;
+				_current_tile = 0;
+			}
 		}
 		
 		/**
@@ -119,6 +116,62 @@ package com.mallets.blitting
 		{
 			return _tile_height;
 		}
+		
+		public function get rows():Number
+		{
+			return this._num_rows;
+		}
+		
+		public function get cols():Number
+		{
+			return this._num_cols;
+		}
+		
+		public function set rows(value:Number):void
+		{
+			this._num_rows = value;
+		}
+		
+		public function set cols(value:Number):void
+		{
+			this._num_cols = value;
+			
+			if (_num_cols > 1)
+				_allow_render = true;
+			else
+				_allow_render = false;
+		}
+		
+		public function flipHorizontal():void
+		{
+			var flipped:BitmapData = new BitmapData(_spritesheet.width, _spritesheet.height, true, 0);
+			var matrix:Matrix;
+			
+			matrix = new Matrix(-1, 0, 0, 1, _spritesheet.width, 0);
+			
+			flipped.draw(_spritesheet, matrix);
+			_spritesheet = flipped;
+		}
+		
+		public function flipVertical():void
+		{
+			var flipped:BitmapData = new BitmapData(_spritesheet.width, _spritesheet.height, true, 0);
+			var matrix:Matrix;
+			
+			matrix = new Matrix( 1, 0, 0, -1, 0, _spritesheet.height);
+			
+			flipped.draw(_spritesheet, matrix);
+			_spritesheet = flipped;
+		}
+		
+		public function update():void
+		{
+			_canvas.lock();
+			_canvas.fillRect(_clear_rect, 0x000000);
+			_render();
+			_canvas.unlock();
+		}
+	
 	}
 
 }

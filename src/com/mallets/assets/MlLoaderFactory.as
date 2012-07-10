@@ -20,7 +20,7 @@ package com.mallets.assets
 			{
 				obj = new MlImageLoader(id, source);
 			}
-			else if (extension == "html" || extension == "txt" || extension == "svg")
+			else if (extension == "html" || extension == "txt" || extension == "svg" || extension == "css")
 			{
 				obj = new MlTextLoader(id, source);
 			}

@@ -48,7 +48,7 @@ package com.mallets.assets
 				{
 					obj = data as Sound;
 				}
-				else if (extension == "txt" || extension == "html" || extension == "svg")
+				else if (extension == "txt" || extension == "html" || extension == "svg" || extension == "css")
 				{
 					// THE USE OF SVG LIKE A STRING IS TO REUSE A SAME IMAGE INTO MULTIPLE OBJECTS
 					obj = new String(data);

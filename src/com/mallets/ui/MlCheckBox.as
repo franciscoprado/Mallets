@@ -1,4 +1,4 @@
-package com.mallets.ui 
+package com.mallets.ui
 {
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
@@ -11,6 +11,7 @@ package com.mallets.ui
 	import flash.text.TextFormatAlign;
 	import com.mallets.assets.MlAssets;
 	import com.mallets.font.MlFont;
+	
 	/**
 	 * ...
 	 * @author Francisco Prado
@@ -18,20 +19,23 @@ package com.mallets.ui
 	public class MlCheckBox extends Sprite
 	{
 		private var _label:MlLabel = new MlLabel();
-		private var _text_format:TextFormat = new TextFormat();
+		private var _text_format:TextFormat;
 		private var _check:DisplayObject;
 		private var _checkbox:DisplayObject;
-		private var _is_checked:Boolean = true;
+		private var _is_checked:Boolean = false;
 		
 		/**
 		 * Create a checkbox with a caption
 		 * @param	label the text caption of checkbox
 		 * @param	text_size the size of text
 		 */
-		public function MlCheckBox(label:String = "", text_size:Number = 15) 
+		public function MlCheckBox(label:String = "", format:TextFormat = null)
 		{
+			if (format)
+				this._text_format = format;
+				
 			_setButtons();
-			_setLabel(label, text_size);
+			_setLabel(label);
 			_setListeners();
 		}
 		
@@ -50,11 +54,15 @@ package com.mallets.ui
 			addChild(_check);
 		}
 		
-		private function _setLabel(label:String, text_size:Number):void
-		{	
-			_text_format.font = MlFont.getFontName();
-			_text_format.align = TextFormatAlign.LEFT;
-			_text_format.size = text_size;
+		private function _setLabel(label:String):void
+		{
+			if (!_text_format)
+			{
+				_text_format = new TextFormat();
+				_text_format.font = MlFont.getFontName();
+				_text_format.align = TextFormatAlign.LEFT;
+				_text_format.size = 15;
+			}
 			
 			_label.text = label;
 			_label.setTextFormat(_text_format);
@@ -71,7 +79,7 @@ package com.mallets.ui
 		{
 			if (_is_checked)
 				_is_checked = false;
-			else 
+			else
 				_is_checked = true;
 			
 			_check.visible = _is_checked;

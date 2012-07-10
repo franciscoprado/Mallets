@@ -1,7 +1,6 @@
 package com.mallets.ui 
 {
 	import flash.display.Sprite;
-	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
@@ -16,8 +15,9 @@ package com.mallets.ui
 		private var _text:MlLabel = new MlLabel();
 		private var _width:Number;
 		private var _height:Number;
+		private var _value:String;
 		
-		public function MlListItem(value:String, item_width:Number, item_height:Number) 
+		public function MlListItem(value:String, text:String, item_width:Number, item_height:Number) 
 		{
 			_width = item_width;
 			_height = item_height;
@@ -30,7 +30,8 @@ package com.mallets.ui
 			graphics.drawRect(0, 0, _width, _height);
 			graphics.endFill();
 			
-			_text.text = value;
+			_value = value;
+			_text.text = text;
 			_text.setTextFormat(_text_format);
 			addChild(_text);
 			
@@ -38,8 +39,13 @@ package com.mallets.ui
 			buttonMode = true;
 		}
 		
-		public function get value():String {
+		public function get text():String
+		{
 			return _text.text;
+		}
+		
+		public function get value():String {
+			return _value;
 		}
 		
 		public function showBorder():void

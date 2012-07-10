@@ -31,10 +31,18 @@ package com.mallets.keycombo
 		private function onKeyDown(evt:KeyboardEvent):void
 		{
 			addKey(evt.keyCode);
+			
+			if (keys_pressed.length == 1)
+			{
+				timer.stop();
+				timer.start();
+			}
 		}
 		
 		private function onKeyUp(evt:KeyboardEvent):void
 		{
+			if (keys_pressed.length == keys_limit)
+				removeFirst();
 			//removeKey(evt.keyCode);
 		}
 		
@@ -45,15 +53,13 @@ package com.mallets.keycombo
 		
 		private function onTick(evt:TimerEvent):void
 		{
-			keys_pressed = [];
+			removeFirst();
 		}
 		
 		private function addKey(key:uint):void
 		{
 			if (keys_pressed.length == keys_limit)
-			{
 				removeFirst();
-			}
 			
 			keys_pressed.push(key);
 		}

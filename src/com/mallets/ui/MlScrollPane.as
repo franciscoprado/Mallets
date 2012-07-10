@@ -28,6 +28,7 @@ package com.mallets.ui
 		private var _bar_width:Number;
 		private var _bar_height:Number;
 		private var _tick:Timer = new Timer(24);
+		private var _with_border:Boolean;
 		
 		/**
 		 * Create a scroll pane, with features like a scroll bar and mouse wheel support.
@@ -39,13 +40,23 @@ package com.mallets.ui
 		public function MlScrollPane(pane_width:Number, pane_height:Number, with_border:Boolean = true, content:DisplayObject = null) {
 			_pane_width = pane_width;
 			_pane_height = pane_height;
+			_with_border = with_border;
 			
+			if (stage)
+				init();
+			else
+				addEventListener(Event.ADDED_TO_STAGE, init);
+		}
+		
+		private function init(e:Event = null):void
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, init);
 			_setButtons();
 			_defineSizes();
 			_addAllObjectsToStage();
 			_createMask();
 			
-			if (with_border) _setBorder();
+			if (_with_border) _setBorder();
 		}
 		
 		private function _setButtons():void
@@ -70,7 +81,7 @@ package com.mallets.ui
 		}
 		
 		public function addContent(content:DisplayObject):void {
-			if(_content) removeChild(_content);			
+			if (_content) removeChild(_content);
 			if (!content) content = new Sprite();
 			
 			_content = content;
